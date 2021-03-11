@@ -1,13 +1,15 @@
 const fetch = require("node-fetch");
 
 var pages = [];
-for (var i = 1; i <= 25; i++) {
+for (var i = 1; i <= 30; i++) {
   pages.push(i);
 }
 
-
+var places = [];
 for (var page of pages) {
-  fetch("https://programare.vaccinare-covid.gov.ro/scheduling/api/centres?page=" + page + "&size=20&sort=,", {
+	var url = "https://programare.vaccinare-covid.gov.ro/scheduling/api/centres?page=" + page + "&size=20&sort=,"
+	//console.log(url)
+  fetch(url, {
     "headers": {
       "accept": "application/json, text/plain, */*",
       "accept-language": "en-US,en;q=0.9,ro;q=0.8",
@@ -17,7 +19,7 @@ for (var page of pages) {
       "sec-fetch-dest": "empty",
       "sec-fetch-mode": "cors",
       "sec-fetch-site": "same-origin",
-      "cookie": "SESSION=FILL THIS"
+      "cookie": "SESSION=ZTBkOWJhZDItYjQ3Ny00Yzg3LWI2NjYtYzg3NjBkNWQ1ZDVl"
     },
     "referrer": "https://programare.vaccinare-covid.gov.ro/",
     "referrerPolicy": "strict-origin-when-cross-origin",
@@ -27,10 +29,18 @@ for (var page of pages) {
   }).then(res => res.json())
     .then(json => {
       var content = json.content;
+	  var placesLength = places.length;
       for (var c of content) {
         if (c.availableSlots > 0) {
-          console.log(c);
+			places.push(c)
+			console.log(c);
+		  
         }
+		
       }
+	  if(placesLength !== places.length) {
+		console.log("Total Locuri: ", places.length)
+	  }
+	  
     })
 }
