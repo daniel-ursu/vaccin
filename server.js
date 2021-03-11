@@ -24,6 +24,8 @@ for (var page of pages) {
     "referrer": "https://programare.vaccinare-covid.gov.ro/",
     "referrerPolicy": "strict-origin-when-cross-origin",
     "body": "{\"countyID\":null,\"localityID\":null,\"name\":null,\"identificationCode\":\"1821005012654\",\"masterPersonnelCategoryID\":-4,\"personnelCategoryID\":32,\"recipientID\":4186562}",
+	//UNCOMMENT THIS TO SEE STAGE 2 DATA AND COMMENT THE ABOVE
+	//"body": "{\"countyID\":null,\"localityID\":null,\"name\":null,\"identificationCode\":\"2300714040012\",\"masterPersonnelCategoryID\":-2,\"personnelCategoryID\":14,\"recipientID\":1246794}",
     "method": "POST",
     "mode": "cors"
   }).then(res => res.json())
