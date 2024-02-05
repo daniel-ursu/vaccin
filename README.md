@@ -1,4 +1,8 @@
 # vaccin
+
+# nodejs file to I created when COVID-19 vaccines were available but there were no places to get the vaccine.
+# this script would have told you when a vaccine spot is available.
+
 Update line 22: `"cookie": "SESSION=ZTBkOWJhZDItYjQ3Ny00Yzg3LWI2NjYtYzg3NjBkNWQ1ZDVl"`
 
 After SESSION= add your cookie code from the browser
